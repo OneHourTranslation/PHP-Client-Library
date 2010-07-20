@@ -187,19 +187,19 @@ class OHTAPI {
 	 * @param integer $word_count (optional)
 	 * @param string $notes (optional)
 	 * @param string $callback_url (optional)
+	 * @param array $params (optional)
 	 * @return stdClass response object
 	 */
-	public function newProject($source , $target , $content , $word_count=0 , $notes='' , $callback_url=''){
+	public function newProject($source , $target , $content , $word_count=0 , $notes='' , $callback_url='', $params=array()){
 		$url = '/project/new/';
 		$method = 'post';
-		$params = array(
-			'source'=>$source,
-			'target'=>$target ,
-			'content' => $content ,
-			'word_count' => $word_count ,
-			'notes' => $notes ,
-			'callback_url' => $callback_url
-		);
+		$params['source'] = $source;
+		$params['target'] = $target;
+		$params['content'] = $content;
+		$params['word_count'] = $word_count;
+		$params['notes'] = $notes;
+		$params['callback_url'] = $callback_url;
+		
 		return $this->request($url , $method , $params);
 		
 	}
@@ -256,7 +256,7 @@ class OHTAPI {
 			$opts[CURLOPT_URL] = $url;
 			$opts[CURLOPT_POSTFIELDS] = $params;
 		}else{
-			$opts[CURLOPT_URL] = $url. '?' . http_build_query($params);
+			$opts[CURLOPT_URL] = $url. '?' . http_build_query($params, '', '&');
 		}
 		$opts[CURLOPT_RETURNTRANSFER] = TRUE;
 		//$opts[CURLOPT_HEADER] = TRUE;
