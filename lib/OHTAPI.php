@@ -260,7 +260,10 @@ class OHTAPI {
 		}
 		$opts[CURLOPT_RETURNTRANSFER] = TRUE;
 		//$opts[CURLOPT_HEADER] = TRUE;
-		
+		if (strstr(strtoupper(PHP_OS) , 'WIN')){
+			$opts[CURLOPT_SSL_VERIFYPEER] = FALSE;
+		}
+
 		curl_setopt_array($ch , $opts);
 		$result = curl_exec($ch);
 		
