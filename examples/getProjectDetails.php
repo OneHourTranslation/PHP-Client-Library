@@ -8,7 +8,7 @@
 		));
 		$oht = OHTAPI::instance();
 		
-		$result = $oht->getProjectDetails('1868769');
+		$result = $oht->getProjectDetails(1418);
 		
 		var_dump($result);
 	}catch(Exception $e){
