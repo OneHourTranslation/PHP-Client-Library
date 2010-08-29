@@ -151,7 +151,7 @@ class OHTAPI {
 	static public function config($conf=array()){
 		self::$account_id = (!empty($conf['account_id'])) ? $conf['account_id'] : OHT_API_ACCOUNT_ID;
 		self::$secret_key = (!empty($conf['secret_key'])) ? $conf['secret_key'] : OHT_API_SECRET_KEY;
-		self::$sandbox = (!empty($conf['sandbox'])) ? $conf['sandbox'] : OHT_API_SANDBOX;
+		self::$sandbox = (isset($conf['sandbox'])) ? (bool)$conf['sandbox'] : OHT_API_SANDBOX;
 		
 	}
 
