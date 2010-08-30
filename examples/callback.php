@@ -5,9 +5,10 @@ $result = array();
 $type = (!empty($_POST['type'])) ? $_POST['type'] : NULL ;
 $result['type'] = $type;
 
+$result['project_id'] = (!empty($_POST['project_id'])) ? 	(int)$_POST['project_id'] : NULL ;
 switch ($type) {
 	case 'status_change' :
-		$result['project_id'] = (!empty($_POST['project_id'])) ? 	(int)$_POST['project_id'] : NULL ;
+		
 		$result['word_count'] = (!empty($_POST['word_count'])) ? 	(int)$_POST['word_count'] : NULL ;
 		$result['source'] = (!empty($_POST['source'])) ? 	$_POST['source'] : NULL ;
 		$result['target'] = (!empty($_POST['target'])) ? 	$_POST['target'] : NULL ;
@@ -18,12 +19,16 @@ switch ($type) {
 		$result['project_url'] = (!empty($_POST['project_url'])) ? $_POST['project_url'] : NULL ;
 		break;
 	case 'translation_submitted':
-		$result['project_id'] = (!empty($_POST['project_id'])) ? (int)$_POST['project_id'] : NULL ;
 		$result['original_content'] = (!empty($_POST['original_content'])) ? base64_decode($_POST['original_content']) : NULL ;
 		$result['translated_content'] = (!empty($_POST['translated_content'])) ? base64_decode($_POST['translated_content']) : NULL ;
 		$result['content_type'] = (!empty($_POST['content_type'])) ? $_POST['content_type'] : NULL ;
 		break;
 		
+}
+$result['user_reference'] = (!empty($_POST['user_reference'])) ? 	$_POST['user_reference'] : NULL ;
+$result['project_reference'] = (!empty($_POST['project_reference'])) ? 	$_POST['project_reference'] : NULL ;
+for($i=0;$i<10;$i++){
+	$result['custom'.$i] = (!empty($_POST['custom'.$i])) ? 	$_POST['custom'.$i] : NULL ;
 }
 
 ob_start();
