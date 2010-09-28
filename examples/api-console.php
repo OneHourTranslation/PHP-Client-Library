@@ -1,10 +1,14 @@
 <?php
 	$sandbox = 'https://sandbox.onehourtranslation.com';
 	$prod = 'https://www.onehourtranslation.com';
-	
 
 	$account_id = 269; //demo user
 	$secret_key = '5a68561984276108fa42d7cffbbf91a5'; //demo user
+	
+	
+	/*
+	 * Switch between "$prod" to use production or "$sandbox" to use sandbox environment.
+	 */
 	$url = $sandbox;
 
 ?>
@@ -21,6 +25,13 @@
 	Notes: <input type="text" name="notes" /><br />
 	Content Type: <input type="text" name="content_type" value="text/plain"/><br />
 	Callback URL: <input type="text" name="callback_url" /><br />
+	
+	User Reference: <input type="text" name="user_reference" value=""/><br />
+	Project Reference: <input type="text" name="project_reference" value=""/><br />
+	<?php for($i=0;$i<10;$i++) : ?>
+		Custom <?php echo $i?>: <input type="text" name="custom<?php echo $i?>" value=""/><br />
+	<?php endfor?>
+	
 	<input type="submit" value="Submit a new Project"/>
 </form>
 

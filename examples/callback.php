@@ -1,5 +1,12 @@
 <?php
 
+
+/* 
+ * Absolute location of a file that will hold the callback log.
+ * Caution! This file WILL be edited and may be deleted. Customize this parameter to indicate an empty files.  
+ */
+$tmpDir = '/tmp/callback';
+
 $result = array();
 
 $type = (!empty($_POST['type'])) ? $_POST['type'] : NULL ;
@@ -38,11 +45,11 @@ print_r($result);
 $ob = ob_get_clean();
 ob_end_clean();
 
-$h = fopen('/tmp/callback','a');
-fwrite($h,"*************\n");
-fwrite($h,date('Y-m-d H:i:s')."\n");
+$h = fopen($tmpDir,'a');
+fwrite($h,"*************".PHP_EOL);
+fwrite($h,date('Y-m-d H:i:s').PHP_EOL);
 fwrite($h,$ob);
-fwrite($h,"\n*************\n\n");
+fwrite($h,PHP_EOL."*************".PHP_EOL.PHP_EOL);
 fclose($h);
 
 ?>
