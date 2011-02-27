@@ -116,7 +116,7 @@ class OHTAPI {
 	
 	const 
 		VERSION='1.0b' ,
-		OHT_PRODUCTION_URL='https://www.onehourtranslation.com/api/1' ,
+		OHT_PRODUCTION_URL='https://api.onehourtranslation.com/api/1' ,
 		OHT_SANDBOX_URL='https://sandbox.onehourtranslation.com/api/1'
 		
 	;
