@@ -2,7 +2,7 @@
 
 ## Introduction ##
 
-One Hour Translation&trade; provides translation, proofreading and transcription services woldwide.
+One Hour Translation&trade; provides translation, proofreading and transcription services worldwide.
 The following API library allows customers to submit and monitor translation and proofreading jobs automatically and remotely.
 
 ## Preconditions and Dependencies  ##
