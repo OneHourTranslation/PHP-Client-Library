@@ -30,7 +30,7 @@ One method of configuration is done on object construction:
     	FALSE // or TRUE for using OHT Sandbox environment
     ));
 
-If you plan on using multiple OHT account, use the above method.
+If you plan on using multiple OHT accounts, use the above method.
 If you plan on using only one OHT account, you may use the following method instead:
 
     require_once 'path/to/OHTAPI.php';
