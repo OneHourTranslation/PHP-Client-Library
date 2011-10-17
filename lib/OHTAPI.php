@@ -245,6 +245,25 @@ class OHTAPI {
 		return $this->request($url , $method);
 	}
 	
+	/**
+	 * Enter description here ...
+	 * @param string $source
+	 * @param string $target
+	 * @param string $source_text - Content for translation. May be plain text, JSON or XML
+	 * @return stdClass response object
+	 */
+	public function machineTranslation($source , $target , $source_text ){
+		$url = '/mt/';
+		$method = 'post';
+		$params['source'] = $source;
+		$params['target'] = $target;
+		$params['source_text'] = $source_text;
+		
+		
+		return $this->request($url , $method , $params);
+		
+	}
+	
 	protected function request($requestURL , $method='get' , $params=array()){
 		$ch = curl_init();
 		$url = $this->getBaseURL() . $requestURL;
