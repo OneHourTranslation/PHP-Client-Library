@@ -121,3 +121,23 @@
 		<iframe name="resAccDetailsIframe" style="width: 400px;height: 300px;border: 2px solid black;"></iframe>
 	</div>
 </div>
+
+<div class="apiMethod">
+	<h2>Machine Translation:</h2>
+	<div class="apiForm">
+		<form method="post" action="<?php echo $url?>/api/1/mt/" target="resMTIframe">
+			URL: <input type="text" name="url" value="<?php echo $url?>" readonly="readonly" disabled="disabled"/> <br />
+			Account ID: <input type="text" name="account_id" value="<?php echo $account_id?>" /> <br />
+			Secret Key: <input type="text" name="secret_key" value="<?php echo $secret_key?>"  /><br />
+			Source: <input type="text" name="source" /><br />
+			Target: <input type="text" name="target" /><br />
+			Content: <textarea name="source_text" cols="50" rows="20"></textarea><br />
+			<input type="submit" value="Translate" />
+		</form>
+	</div>
+	
+	
+	<div class="apiResFrame">
+		<iframe name="resMTIframe" style="width: 400px;height: 300px;border: 2px solid black;"></iframe>
+	</div>
+</div>
