@@ -1,5 +1,11 @@
 # OneHourTranslation API Library for PHP #
 
+**Important!**
+
+This library implements the deprecated version 1 of One Hour Translation API.
+Please refer to the following library instead: https://github.com/OneHourTranslation/API-2-Client-PHP. 
+Updated API documentation is here: https://www.onehourtranslation.com/translation/api-documentation-v2/general-instructions. 
+
 ## Introduction ##
 
 One Hour Translation&trade; provides translation, proofreading and transcription services worldwide.
